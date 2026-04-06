@@ -402,7 +402,10 @@ body {
 
 .bot-icon {
     max-width: 300px;
-    height: auto;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
     animation: bounce 3s ease-in-out infinite;
     filter: drop-shadow(0 0 40px rgba(88, 101, 242, 0.3));
     display: block;
@@ -767,6 +770,8 @@ body {
 
     .bot-icon {
         max-width: 220px;
+        width: 220px;
+        height: 220px;
     }
 
     .features-overview h2,
@@ -856,6 +861,8 @@ body {
 
     .bot-icon {
         max-width: 150px;
+        width: 150px;
+        height: 150px;
     }
 
     .status-grid {
