@@ -401,9 +401,11 @@ body {
 }
 
 .bot-icon {
-    font-size: 18rem;
-    animation: bounce 3s ease-in-out infinite, rotate 20s linear infinite;
+    max-width: 300px;
+    height: auto;
+    animation: bounce 3s ease-in-out infinite;
     filter: drop-shadow(0 0 40px rgba(88, 101, 242, 0.3));
+    display: block;
 }
 
 @keyframes bounce {
@@ -764,7 +766,7 @@ body {
     }
 
     .bot-icon {
-        font-size: 12rem;
+        max-width: 220px;
     }
 
     .features-overview h2,
@@ -853,7 +855,7 @@ body {
     }
 
     .bot-icon {
-        font-size: 8rem;
+        max-width: 150px;
     }
 
     .status-grid {
