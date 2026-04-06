@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features & Commands - Laptop Control Bot</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🤖 Laptop Control Bot</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="setup.html">Setup</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>🎮 Features & Commands</h1>
+            <p>Complete list of 25+ commands to control your laptop remotely</p>
+        </div>
+    </section>
+
+    <!-- Commands by Category -->
+    <section id="features" class="commands-section">
+        <div class="container">
+            <!-- Audio Commands -->
+            <div class="command-category">
+                <div class="category-icon">🎤</div>
+                <h2>Audio & Voice (audio.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!speak &lt;message&gt;</code>
+                        <p>Make the laptop speak a message aloud using Native TTS</p>
+                        <span class="example">Example: <code>!speak "Hello there!"</code></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Control Commands -->
+            <div class="command-category">
+                <div class="category-icon">🔧</div>
+                <h2>System Control (control.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!open_chrome</code>
+                        <p>Open Google Chrome on the laptop</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!chrome_search &lt;search terms&gt;</code>
+                        <p>Open Chrome and search Google directly</p>
+                        <span class="example">Example: <code>!chrome_search weather in chennai</code></span>
+                    </div>
+                    <div class="command-item">
+                        <code>!open &lt;app_name&gt;</code>
+                        <p>Attempt to open an application by name</p>
+                        <span class="example">Example: <code>!open notepad</code>, <code>!open calc</code></span>
+                    </div>
+                    <div class="command-item">
+                        <code>!lock</code>
+                        <p>Lock the computer workstation</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!shutdown</code>
+                        <p>Initiate a system shutdown (defaults to 10s delay)</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!vol_up [amount]</code>
+                        <p>Increase system volume by specified amount (1-50, default 10)</p>
+                        <span class="example">Example: <code>!vol_up 5</code></span>
+                    </div>
+                    <div class="command-item">
+                        <code>!vol_down [amount]</code>
+                        <p>Decrease system volume by specified amount (1-50, default 10)</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!mute</code>
+                        <p>Toggle system audio mute/unmute</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!vol_set &lt;level&gt;</code>
+                        <p>Set system master volume to an exact percentage (0-100)</p>
+                        <span class="example">Example: <code>!vol_set 50</code></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Management Commands -->
+            <div class="command-category">
+                <div class="category-icon">💾</div>
+                <h2>File Management (files.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!download &lt;path&gt;</code>
+                        <p>Download a specific file from the laptop to Discord (25 MB limit)</p>
+                        <span class="example">Example: <code>!download C:\Users\YourName\Documents\file.txt</code></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Apple Music Commands -->
+            <div class="command-category">
+                <div class="category-icon">🎵</div>
+                <h2>Apple Music Control (music.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!play &lt;song name&gt;</code>
+                        <p>Remotely open Apple Music, search, and play the specified song</p>
+                        <span class="example">Example: <code>!play Blinding Lights</code></span>
+                    </div>
+                    <div class="command-item">
+                        <code>!pause_music</code>
+                        <p>Pause or resume the current song in Apple Music</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!stop_music</code>
+                        <p>Stop the current song and rewind to the beginning</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!next_song</code>
+                        <p>Skip to the next track</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!prev_song</code>
+                        <p>Go back to the previous track</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshot Commands -->
+            <div class="command-category">
+                <div class="category-icon">📸</div>
+                <h2>Screenshots (screenshot.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!screenshot</code>
+                        <p>Take a screenshot of the primary laptop display and upload it to Discord</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Streaming Commands -->
+            <div class="command-category">
+                <div class="category-icon">📱</div>
+                <h2>Live Streaming (stream.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!stream_start</code>
+                        <p>Start a live stream that updates a single Discord message with screenshots every second</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!stream_web_start</code>
+                        <p>Start a web-based live stream server for mobile device access</p>
+                        <span class="highlight">📱 Mobile-friendly: Opens URL viewable on any phone/tablet on the same network</span>
+                    </div>
+                    <div class="command-item">
+                        <code>!stream_web_stop</code>
+                        <p>Stop the web streaming server</p>
+                    </div>
+                    <div class="command-item">
+                        <code>!stream_stop</code>
+                        <p>Stop the Discord-based stream</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Information Commands -->
+            <div class="command-category">
+                <div class="category-icon">💻</div>
+                <h2>System Information (systeminfo.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!sysinfo</code>
+                        <p>Display core hardware utilization including OS details, CPU usage, Memory/RAM stats, and Disk storage</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Webcam Commands -->
+            <div class="command-category">
+                <div class="category-icon">📷</div>
+                <h2>Webcam (webcam.py)</h2>
+                <div class="commands-list">
+                    <div class="command-item">
+                        <code>!webcam</code>
+                        <p>Capture a snapshot using the laptop's default webcam and upload it to Discord</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips & Tricks -->
+            <div class="command-category tips-section">
+                <div class="category-icon">💡</div>
+                <h2>Tips & Tricks</h2>
+                <ul class="tips-list">
+                    <li>✅ All commands require you to be an <strong>authorized user</strong> (configured in .env)</li>
+                    <li>✅ Commands are <strong>case-insensitive</strong> (use any case you want)</li>
+                    <li>✅ Use <strong>quotes for messages</strong> with spaces: <code>!speak "Hello World"</code></li>
+                    <li>✅ The bot requires <strong>administrator permissions</strong> in your Discord server</li>
+                    <li>✅ All interactions are <strong>real-time</strong> when properly configured</li>
+                    <li>✅ <strong>Mobile streaming</strong> works on the same WiFi network</li>
+                    <li>✅ File downloads are limited to <strong>25 MB</strong> due to Discord API limits</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2>Feature Overview</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>✨ Real-Time Control</h3>
+                    <p>Execute commands instantly on your laptop from anywhere</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>🔐 Secure & Authorized</h3>
+                    <p>Only whitelisted Discord users can execute commands</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>📱 Mobile Friendly</h3>
+                    <p>Stream your desktop to any mobile device on the network</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>🎛️ Full System Control</h3>
+                    <p>Control volume, launch apps, lock/shutdown, and more</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>🎵 Media Control</h3>
+                    <p>Play music, pause, skip, and control playback remotely</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>📊 Live Monitoring</h3>
+                    <p>Check system stats and take screenshots instantly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Laptop Control Bot</h4>
+                    <p>Remote control your laptop via Discord</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">All Commands</a></li>
+                        <li><a href="setup.html">Setup Guide</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/Naveen022006" target="_blank">GitHub</a></li>
+                        <li><a href="https://naveenhub.dev" target="_blank">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2026 Laptop Control Bot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

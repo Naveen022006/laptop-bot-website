@@ -1,0 +1,204 @@
+/* Page Header Styling */
+.page-header {
+    background: linear-gradient(135deg, var(--darker) 0%, rgba(88, 101, 242, 0.15) 50%, var(--darker) 100%);
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--light);
+}
+
+/* Commands Section */
+.commands-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--dark);
+}
+
+.command-category {
+    background: linear-gradient(135deg, rgba(88, 101, 242, 0.1), rgba(0, 217, 255, 0.05));
+    border: 2px solid var(--primary);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.command-category:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.command-category h2 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.commands-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.command-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--accent);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+}
+
+.command-item:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-left-color: var(--secondary);
+}
+
+.command-item code {
+    color: var(--success);
+    background: rgba(35, 255, 0, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', monospace;
+}
+
+.command-item p {
+    color: var(--light);
+    margin: 0.5rem 0;
+}
+
+.example {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.example code {
+    color: #00D9FF;
+}
+
+.highlight {
+    display: block;
+    background: rgba(0, 217, 255, 0.15);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--secondary);
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.tips-section .tips-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tips-section li {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--success);
+    color: var(--light);
+}
+
+.tips-section strong {
+    color: var(--secondary);
+}
+
+/* Comparison Section */
+.comparison-section {
+    padding: var(--spacing-xl) 0;
+    background: var(--darker);
+}
+
+.comparison-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.comparison-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(255, 0, 110, 0.05));
+    border: 2px solid var(--secondary);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.comparison-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 0, 110, 0.2);
+}
+
+.comparison-card h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.comparison-card p {
+    color: var(--light);
+    line-height: 1.6;
+}
+
+.info-box {
+    background: rgba(88, 101, 242, 0.15);
+    border: 1px solid var(--primary);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--light);
+    margin: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .command-category {
+        padding: 1rem;
+    }
+
+    .command-category h2 {
+        font-size: 1.2rem;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}

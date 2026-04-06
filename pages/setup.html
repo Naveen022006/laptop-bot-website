@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Guide - Laptop Control Bot</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        .setup-section code {
+            background: rgba(88, 101, 242, 0.2);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #00D9FF;
+        }
+        .setup-step {
+            background: rgba(88, 101, 242, 0.1);
+            border-left: 4px solid #00D9FF;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+        .setup-step h3 {
+            color: #00D9FF;
+            margin-bottom: 0.5rem;
+        }
+        .code-block {
+            background: #0f0f0f;
+            border: 1px solid #5865F2;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .code-block code {
+            color: #23FF00;
+            font-family: 'Courier New', monospace;
+            background: none;
+            padding: 0;
+        }
+        .warning-box {
+            background: rgba(255, 183, 0, 0.1);
+            border: 2px solid #FFB700;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .success-box {
+            background: rgba(35, 255, 0, 0.1);
+            border: 2px solid #23FF00;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🤖 Laptop Control Bot</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="#setup">Setup</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>🚀 Setup Guide</h1>
+            <p>Step-by-step instructions to get the bot running on your laptop</p>
+        </div>
+    </section>
+
+    <!-- Setup Section -->
+    <section id="setup" class="setup-section">
+        <div class="container">
+            <!-- Prerequisites -->
+            <div class="setup-step">
+                <h3>📋 Prerequisites</h3>
+                <ul>
+                    <li>Python 3.8 or higher installed</li>
+                    <li>Git installed (for cloning the repository)</li>
+                    <li>Discord account and a Discord server (or create one)</li>
+                    <li>Discord bot token (from Discord Developer Portal)</li>
+                    <li>Your Discord User ID</li>
+                    <li>Windows/Mac/Linux operating system</li>
+                </ul>
+            </div>
+
+            <!-- Step 1: Create Discord Bot -->
+            <div class="setup-step">
+                <h3>Step 1️⃣ Create a Discord Bot</h3>
+                <ol>
+                    <li>Go to <a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a></li>
+                    <li>Click "New Application" and give it a name: "Laptop Control Bot"</li>
+                    <li>Go to the "Bot" section and click "Add Bot"</li>
+                    <li>Under TOKEN, click "Copy" to copy your bot token (keep this secret! 🔐)</li>
+                    <li>Go to "OAuth2" → "URL Generator"</li>
+                    <li>Select scopes: <code>bot</code></li>
+                    <li>Select permissions: <code>Administrator</code></li>
+                    <li>Copy the generated URL and open it in your browser to invite the bot to your server</li>
+                </ol>
+                <div class="info-box">
+                    <strong>⚠️ Important:</strong> Never share your bot token! It's like your bot's password.
+                </div>
+            </div>
+
+            <!-- Step 2: Clone Repository -->
+            <div class="setup-step">
+                <h3>Step 2️⃣ Clone the Repository</h3>
+                <p>Open PowerShell/Command Prompt and run:</p>
+                <div class="code-block">
+                    <code>git clone https://github.com/Naveen022006/laptop-control-application.git
+cd laptop-control-application</code>
+                </div>
+                <p>Or download the ZIP directly from GitHub and extract it.</p>
+            </div>
+
+            <!-- Step 3: Create Virtual Environment -->
+            <div class="setup-step">
+                <h3>Step 3️⃣ Create a Virtual Environment</h3>
+                <p>Open PowerShell in the bot directory and run:</p>
+                <div class="code-block">
+                    <code>python -m venv venv</code>
+                </div>
+                <p>Activate the virtual environment:</p>
+                <div class="code-block">
+                    <code>.\venv\Scripts\activate</code>
+                </div>
+                <p>You should see <code>(venv)</code> at the beginning of your command prompt.</p>
+            </div>
+
+            <!-- Step 4: Install Dependencies -->
+            <div class="setup-step">
+                <h3>Step 4️⃣ Install Required Dependencies</h3>
+                <p>With the virtual environment activated, run:</p>
+                <div class="code-block">
+                    <code>pip install -r requirements.txt</code>
+                </div>
+                <p>This installs all necessary Python packages.</p>
+            </div>
+
+            <!-- Step 5: Configure .env File -->
+            <div class="setup-step">
+                <h3>Step 5️⃣ Configure Environment Variables</h3>
+                <p>Create a <code>.env</code> file in the main directory with:</p>
+                <div class="code-block">
+                    <code>DISCORD_TOKEN=your_bot_token_here
+AUTHORIZED_USERS=your_user_id_here</code>
+                </div>
+                <p><strong>Example:</strong></p>
+                <div class="code-block">
+                    <code>DISCORD_TOKEN=MTk4NjIyNDgzNzA=.ClssqA.1234567890
+AUTHORIZED_USERS=123456789012345678</code>
+                </div>
+                <p>To find your User ID:</p>
+                <ul>
+                    <li>Enable Developer Mode in Discord (Settings → Advanced → Developer Mode)</li>
+                    <li>Right-click your username and select "Copy User ID"</li>
+                </ul>
+                <div class="warning-box">
+                    <strong>⚠️ Security Warning:</strong> Never commit the .env file to GitHub! It contains sensitive information.
+                </div>
+            </div>
+
+            <!-- Step 6: Run the Bot -->
+            <div class="setup-step">
+                <h3>Step 6️⃣ Run the Bot</h3>
+                <p>Make sure your virtual environment is activated, then run:</p>
+                <div class="code-block">
+                    <code>python bot.py</code>
+                </div>
+                <p>You should see output like:</p>
+                <div class="code-block">
+                    <code>Logged in as YourBotName (123456789)
+------
+Bot is ready to receive commands.</code>
+                </div>
+            </div>
+
+            <!-- Step 7: Test the Bot -->
+            <div class="setup-step">
+                <h3>Step 7️⃣ Test the Bot</h3>
+                <p>Go to your Discord server and try a command:</p>
+                <div class="code-block">
+                    <code>!screenshot</code>
+                </div>
+                <p>The bot should respond with a screenshot of your laptop.</p>
+                <div class="success-box">
+                    <strong>✅ Success!</strong> Your bot is now running! Try other commands like <code>!sysinfo</code> or <code>!speak "Hello"</code>
+                </div>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="setup-step">
+                <h3>❌ Troubleshooting</h3>
+                <div style="margin-top: 1rem;">
+                    <h4 style="color: #00D9FF;">Bot doesn't respond to commands:</h4>
+                    <ul>
+                        <li>Check that your User ID is in the .env file under <code>AUTHORIZED_USERS</code></li>
+                        <li>Make sure the bot has Administrator permissions</li>
+                        <li>Verify your DISCORD_TOKEN is correct</li>
+                        <li>Check that the bot is online in your Discord server</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <h4 style="color: #00D9FF;">ImportError or missing packages:</h4>
+                    <ul>
+                        <li>Make sure you're in the virtual environment: <code>.\venv\Scripts\activate</code></li>
+                        <li>Reinstall requirements: <code>pip install -r requirements.txt</code></li>
+                        <li>Ensure Python 3.8+ is installed: <code>python --version</code></li>
+                    </ul>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <h4 style="color: #00D9FF;">Commands execute but give errors:</h4>
+                    <ul>
+                        <li>Check the console output for error messages</li>
+                        <li>Some commands may require specific software (e.g., Chrome for <code>!chrome_search</code>)</li>
+                        <li>Ensure your system has the necessary permissions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Advanced Setup -->
+            <div class="setup-step">
+                <h3>⚙️ Advanced Setup</h3>
+                <h4 style="color: #00D9FF; margin-top: 1rem;">Run Bot on Startup (Windows)</h4>
+                <p>Use the included <code>setup_startup.py</code> script:</p>
+                <div class="code-block">
+                    <code>python setup_startup.py</code>
+                </div>
+                <p>This will set up the bot to run automatically when your laptop starts.</p>
+                
+                <h4 style="color: #00D9FF; margin-top: 1rem;">Multiple Authorized Users</h4>
+                <p>Add multiple user IDs separated by commas in .env:</p>
+                <div class="code-block">
+                    <code>AUTHORIZED_USERS=123456789,987654321,111222333</code>
+                </div>
+            </div>
+
+            <!-- Getting Help -->
+            <div class="setup-step" style="border-color: #23FF00;">
+                <h3 style="color: #23FF00;">❓ Need Help?</h3>
+                <ul>
+                    <li>📖 Check <a href="features.html">all available commands</a></li>
+                    <li>🐛 Report issues on <a href="https://github.com/Naveen022006/laptop-control-application/issues" target="_blank">GitHub Issues</a></li>
+                    <li>📧 Contact the developer: <a href="mailto:kanagunaveen@gmail.com">kanagunaveen@gmail.com</a></li>
+                    <li>⭐ Star the project on <a href="https://github.com/Naveen022006/laptop-control-application" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Laptop Control Bot</h4>
+                    <p>Remote control your laptop via Discord</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="features.html">All Commands</a></li>
+                        <li><a href="#setup">Setup Guide</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/Naveen022006" target="_blank">GitHub</a></li>
+                        <li><a href="https://naveenhub.dev" target="_blank">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2026 Laptop Control Bot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Laptop Control Bot</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .contact-card {
+            background: linear-gradient(135deg, rgba(88, 101, 242, 0.1), rgba(0, 217, 255, 0.05));
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+        .contact-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .contact-card a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+        .contact-card a:hover {
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        .feedback-section {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(255, 0, 110, 0.05));
+            border: 2px solid var(--secondary);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🤖 Laptop Control Bot</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="setup.html">Setup</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>📞 Contact & Support</h1>
+            <p>Get in touch with the developer or join the community</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="setup-section">
+        <div class="container">
+            <!-- Main Contact Cards -->
+            <div class="contact-grid">
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Have questions or suggestions?</p>
+                    <a href="mailto:kanagunaveen@gmail.com">kanagunaveen@gmail.com</a>
+                    <p style="font-size: 0.9rem; color: var(--light); margin-top: 1rem;">
+                        Response time: Usually within 24 hours
+                    </p>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-card">
+                    <div class="contact-icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <p>View the source code and contribute</p>
+                    <a href="https://github.com/Naveen022006/laptop-control-application" target="_blank">
+                        View Repository
+                    </a>
+                    <p style="font-size: 0.9rem; color: var(--light); margin-top: 1rem;">
+                        Issues, PRs, and discussions welcome!
+                    </p>
+                </div>
+
+                <!-- Portfolio -->
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <h3>Portfolio</h3>
+                    <p>Check out more projects</p>
+                    <a href="https://naveenhub.dev" target="_blank">
+                        naveenhub.dev
+                    </a>
+                    <p style="font-size: 0.9rem; color: var(--light); margin-top: 1rem;">
+                        Personal website and portfolio
+                    </p>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div style="text-align: center; margin: 3rem 0;">
+                <h2 style="margin-bottom: 2rem; background: linear-gradient(135deg, var(--secondary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    Connect with Me
+                </h2>
+                <div class="social-links">
+                    <a href="https://github.com/Naveen022006" target="_blank" class="social-link" title="GitHub">
+                        🐙
+                    </a>
+                    <a href="https://naveenhub.dev" target="_blank" class="social-link" title="Portfolio">
+                        🌐
+                    </a>
+                    <a href="mailto:kanagunaveen@gmail.com" class="social-link" title="Email">
+                        📧
+                    </a>
+                </div>
+            </div>
+
+            <!-- Support & Feedback -->
+            <div class="feedback-section">
+                <h3 style="color: var(--secondary); margin-bottom: 1rem;">💡 Feature Requests & Bug Reports</h3>
+                <p>Found a bug? Have an idea for a new feature? Head over to the GitHub repository and:</p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Open an <a href="https://github.com/Naveen022006/laptop-control-application/issues" target="_blank" style="color: var(--secondary);">Issue</a> to report bugs or request features</li>
+                    <li>Submit a <a href="https://github.com/Naveen022006/laptop-control-application/pulls" target="_blank" style="color: var(--secondary);">Pull Request</a> to contribute code improvements</li>
+                    <li>Join the Discussions for general questions and feedback</li>
+                </ul>
+            </div>
+
+            <!-- FAQ Section -->
+            <div style="margin-top: 3rem;">
+                <h2 style="text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    ❓ Frequently Asked Questions
+                </h2>
+                
+                <div style="display: grid; gap: 1rem;">
+                    <details style="background: rgba(88, 101, 242, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: 0.5rem; cursor: pointer;">
+                        <summary style="color: var(--secondary); font-weight: 600; cursor: pointer;">
+                            Is the bot free to use?
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--light);">
+                            Yes! The bot is completely free and open-source. You can use it, modify it, and contribute to it.
+                        </p>
+                    </details>
+
+                    <details style="background: rgba(88, 101, 242, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: 0.5rem; cursor: pointer;">
+                        <summary style="color: var(--secondary); font-weight: 600; cursor: pointer;">
+                            Is my laptop secure when using this bot?
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--light);">
+                            Yes! Only authorized users (configured in .env) can execute commands. Your bot token is kept private and never shared. However, always be cautious about who you authorize.
+                        </p>
+                    </details>
+
+                    <details style="background: rgba(88, 101, 242, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: 0.5rem; cursor: pointer;">
+                        <summary style="color: var(--secondary); font-weight: 600; cursor: pointer;">
+                            Can I modify the bot's commands?
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--light);">
+                            Absolutely! The bot is open-source, so you can modify any command or add new features. Check the codebase in the <code>commands/</code> directory.
+                        </p>
+                    </details>
+
+                    <details style="background: rgba(88, 101, 242, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: 0.5rem; cursor: pointer;">
+                        <summary style="color: var(--secondary); font-weight: 600; cursor: pointer;">
+                            What operating systems are supported?
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--light);">
+                            The bot supports Windows, macOS, and Linux. Some features like Chrome detection are optimized for Windows, but most commands work on all platforms.
+                        </p>
+                    </details>
+
+                    <details style="background: rgba(88, 101, 242, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: 0.5rem; cursor: pointer;">
+                        <summary style="color: var(--secondary); font-weight: 600; cursor: pointer;">
+                            How often is the bot updated?
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--light);">
+                            The bot is actively maintained! Updates and new features are added regularly. Follow the GitHub repository to stay updated with the latest releases.
+                        </p>
+                    </details>
+
+                    <details style="background: rgba(88, 101, 242, 0.1); border: 1px solid var(--primary); padding: 1rem; border-radius: 0.5rem; cursor: pointer;">
+                        <summary style="color: var(--secondary); font-weight: 600; cursor: pointer;">
+                            Do I need special permissions on my Discord server?
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--light);">
+                            The bot needs Administrator permissions to function fully. When you invite the bot to your server, it will request these permissions. You can also set specific channel permissions if desired.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Support Form Info -->
+            <div style="background: linear-gradient(135deg, rgba(35, 255, 0, 0.1), rgba(0, 217, 255, 0.05)); border: 2px solid var(--success); padding: 2rem; border-radius: 1rem; margin-top: 2rem;">
+                <h3 style="color: var(--success); margin-bottom: 1rem;">🎯 How to Get Help</h3>
+                <ol style="color: var(--light); line-height: 1.8;">
+                    <li><strong>Check the Setup Guide:</strong> Most issues are covered in our <a href="setup.html" style="color: var(--secondary);">detailed setup guide</a></li>
+                    <li><strong>Browse GitHub Issues:</strong> Search existing issues at <a href="https://github.com/Naveen022006/laptop-control-application/issues" target="_blank" style="color: var(--secondary);">GitHub Issues</a></li>
+                    <li><strong>Contact via Email:</strong> Email <a href="mailto:kanagunaveen@gmail.com" style="color: var(--secondary);">kanagunaveen@gmail.com</a> for direct support</li>
+                    <li><strong>Open an Issue:</strong> If the problem isn't documented, create a new GitHub issue with details</li>
+                    <li><strong>Contribute:</strong> Have a fix? Submit a pull request to help improve the project!</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Laptop Control Bot</h4>
+                    <p>Remote control your laptop via Discord</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="features.html">All Commands</a></li>
+                        <li><a href="setup.html">Setup Guide</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/Naveen022006" target="_blank">GitHub</a></li>
+                        <li><a href="https://naveenhub.dev" target="_blank">Portfolio</a></li>
+                        <li><a href="mailto:kanagunaveen@gmail.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2026 Laptop Control Bot. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
