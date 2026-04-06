@@ -106,9 +106,124 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// ===== WAKE LOCK FUNCTIONALITY =====
+// Prevent screen/device from going to sleep
+
+let wakeLock = null;
+let wakeLockActive = false;
+
+async function requestWakeLock() {
+    try {
+        if ('wakeLock' in navigator) {
+            wakeLock = await navigator.wakeLock.request('screen');
+            wakeLockActive = true;
+            console.log('✅ Screen Wake Lock activated - Device will not sleep');
+            
+            // Handle wake lock release
+            wakeLock.addEventListener('release', () => {
+                console.log('⚠️ Wake Lock released');
+                wakeLockActive = false;
+            });
+            
+            return true;
+        } else {
+            console.warn('⚠️ Wake Lock API not supported in this browser');
+            return false;
+        }
+    } catch (error) {
+        console.error('❌ Failed to request wake lock:', error);
+        return false;
+    }
+}
+
+// Re-acquire wake lock if page becomes visible again
+document.addEventListener('visibilitychange', async () => {
+    if (document.hidden) {
+        console.log('📱 Page hidden - Wake lock may be released');
+    } else {
+        console.log('🔄 Page visible - Attempting to restore wake lock');
+        if (wakeLockActive && wakeLock === null) {
+            await requestWakeLock();
+        }
+    }
+});
+
+// Keep page active with periodic activity (fallback for older browsers)
+function keepPageActive() {
+    // Simulate user activity every 5 minutes to prevent sleep
+    setInterval(() => {
+        if (wakeLockActive && document.hidden === false) {
+            // Send a minimal XHR to keep connection alive
+            // This helps prevent ISP/router sleep in some cases
+            fetch(window.location.href, { method: 'HEAD' }).catch(() => {});
+            console.log('🔄 Keep-alive activity triggered');
+        }
+    }, 300000); // Every 5 minutes
+}
+
+// Release wake lock
+async function releaseWakeLock() {
+    try {
+        if (wakeLock) {
+            await wakeLock.release();
+            wakeLock = null;
+            wakeLockActive = false;
+            console.log('🔓 Screen Wake Lock released');
+        }
+    } catch (error) {
+        console.error('❌ Failed to release wake lock:', error);
+    }
+}
+
+// Toggle wake lock button functionality
+function setupWakeLockButton() {
+    const btn = document.getElementById('wakeLockBtn');
+    if (!btn) return;
+    
+    // Update button based on wake lock status
+    const updateButtonStatus = () => {
+        if (wakeLockActive) {
+            btn.textContent = '🌟';
+            btn.classList.add('active');
+            btn.title = 'Screen Wake Lock ACTIVE - Screen will not sleep';
+        } else {
+            btn.textContent = '😴';
+            btn.classList.remove('active');
+            btn.title = 'Screen Wake Lock OFF - Click to activate';
+        }
+    };
+    
+    btn.addEventListener('click', async () => {
+        if (wakeLockActive) {
+            releaseWakeLock();
+        } else {
+            requestWakeLock();
+        }
+        // Update button after a short delay
+        setTimeout(updateButtonStatus, 100);
+    });
+    
+    // Initial button state
+    updateButtonStatus();
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🤖 Laptop Control Bot - Website Loaded');
+    
+    // Automatically request wake lock to prevent sleep
+    console.log('⏰ Requesting Screen Wake Lock...');
+    requestWakeLock().then(success => {
+        if (!success) {
+            console.log('💭 Wake Lock unavailable - using fallback keep-alive method');
+            keepPageActive(); // Fallback for older browsers
+        } else {
+            keepPageActive(); // Additional safety even with Wake Lock
+        }
+    });
+    
+    // Setup wake lock button
+    setupWakeLockButton();
     
     // Check bot status
     checkBotStatus();

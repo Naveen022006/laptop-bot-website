@@ -112,6 +112,36 @@ body {
     width: 100%;
 }
 
+/* Wake Lock Button */
+.wake-lock-btn {
+    background: rgba(88, 101, 242, 0.2);
+    border: 2px solid var(--primary);
+    color: var(--light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+}
+
+.wake-lock-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.wake-lock-btn.active {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    border-color: var(--secondary);
+    color: var(--dark);
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.4);
+}
+
 /* ===== HERO SECTION ===== */
 .hero {
     min-height: calc(100vh - 80px);
