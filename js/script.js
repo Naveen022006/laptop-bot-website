@@ -183,11 +183,11 @@ function setupWakeLockButton() {
     // Update button based on wake lock status
     const updateButtonStatus = () => {
         if (wakeLockActive) {
-            btn.textContent = '🌟';
+            btn.textContent = '';
             btn.classList.add('active');
             btn.title = 'Screen Wake Lock ACTIVE - Screen will not sleep';
         } else {
-            btn.textContent = '😴';
+            btn.textContent = '';
             btn.classList.remove('active');
             btn.title = 'Screen Wake Lock OFF - Click to activate';
         }
