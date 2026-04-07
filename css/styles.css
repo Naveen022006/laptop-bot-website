@@ -137,6 +137,18 @@ body::after {
     gap: 12px;
 }
 
+.brand-logo {
+    height: 50px;
+    width: auto;
+    filter: drop-shadow(0 0 8px rgba(88, 101, 242, 0.3));
+    transition: var(--transition);
+}
+
+.brand-logo:hover {
+    filter: drop-shadow(0 0 16px rgba(0, 217, 255, 0.5));
+    transform: scale(1.05);
+}
+
 .nav-logo {
     height: 40px;
     width: auto;
@@ -144,7 +156,7 @@ body::after {
 }
 
 .nav-brand h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     background: linear-gradient(135deg, var(--secondary), var(--accent), var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -221,24 +233,6 @@ body::after {
 }
 
 /* ===== HEADER SECTION ===== */
-.header-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
-    background: rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(88, 101, 242, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.header-logo {
-    max-width: 100%;
-    height: auto;
-    max-height: 120px;
-    display: block;
-    filter: drop-shadow(0 0 20px rgba(88, 101, 242, 0.3));
-}
-
 /* ===== HERO SECTION ===== */
 .hero {
     min-height: 100vh;
@@ -933,12 +927,16 @@ body::after {
 }
 
 @media (max-width: 768px) {
-    .header-logo {
-        max-height: 100px;
-    }
-
     .navbar {
         padding: 0.8rem 0;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.3rem;
+    }
+
+    .brand-logo {
+        height: 42px;
     }
 
     .nav-links {
@@ -1033,20 +1031,16 @@ body::after {
         padding: 0 1rem;
     }
 
-    .header-section {
-        padding: 1rem 0;
-    }
-
-    .header-logo {
-        max-height: 70px;
-    }
-
     .navbar {
         padding: 0.6rem 0;
     }
 
     .nav-brand h1 {
         font-size: 1.2rem;
+    }
+
+    .brand-logo {
+        height: 35px;
     }
 
     .nav-logo {
