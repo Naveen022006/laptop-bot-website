@@ -200,20 +200,20 @@ body::after {
 
 /* Wake Lock Button */
 .wake-lock-btn {
-    background: rgba(88, 101, 242, 0.1);
-    border: 1.5px solid var(--primary);
+    background: transparent;
+    border: none;
     color: var(--light);
-    padding: 0.6rem 0.8rem;
+    padding: 0;
     border-radius: var(--radius-lg);
     cursor: pointer;
     font-size: 1.3rem;
     transition: var(--transition);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-    min-width: 45px;
-    height: 45px;
-    backdrop-filter: blur(10px);
+    min-width: 0;
+    height: 0;
+    backdrop-filter: none;
 }
 
 .wake-lock-btn:hover {
