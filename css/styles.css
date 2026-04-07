@@ -134,7 +134,21 @@ body::after {
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 12px;
+}
+
+.brand-logo {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 8px rgba(88, 101, 242, 0.3));
+    transition: var(--transition);
+}
+
+.brand-logo:hover {
+    filter: drop-shadow(0 0 16px rgba(0, 217, 255, 0.5));
+    transform: scale(1.05);
 }
 
 .nav-brand h1 {
@@ -917,6 +931,11 @@ body::after {
         font-size: 1.3rem;
     }
 
+    .brand-logo {
+        height: 42px;
+        width: 42px;
+    }
+
     .nav-links {
         gap: 1rem;
         font-size: 0.85rem;
@@ -1015,6 +1034,11 @@ body::after {
 
     .nav-brand h1 {
         font-size: 1.2rem;
+    }
+
+    .brand-logo {
+        height: 35px;
+        width: 35px;
     }
 
     .nav-logo {
