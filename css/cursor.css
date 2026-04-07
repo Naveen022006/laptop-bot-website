@@ -14,8 +14,8 @@
 .cursor-shape {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6));
-    /* Black glow */
+    filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.8));
+    /* Cyan glow */
 }
 
 /* Hide default cursor on body */
