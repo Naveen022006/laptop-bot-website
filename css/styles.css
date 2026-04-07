@@ -139,7 +139,9 @@ body::after {
 
 .brand-logo {
     height: 32px;
-    width: auto;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
     filter: drop-shadow(0 0 8px rgba(88, 101, 242, 0.3));
     transition: var(--transition);
 }
@@ -937,6 +939,7 @@ body::after {
 
     .brand-logo {
         height: 42px;
+        width: 42px;
     }
 
     .nav-links {
@@ -1041,6 +1044,7 @@ body::after {
 
     .brand-logo {
         height: 35px;
+        width: 35px;
     }
 
     .nav-logo {
