@@ -36,7 +36,30 @@ textarea {
 }
 
 /* --- Mobile Override --- */
-/* Hide custom cursor completely on mobile/tablets */
+/* Hide custom cursor completely on mobile/touch devices and tablets */
+@media (hover: none) and (pointer: coarse) {
+    .cursor {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+
+    a,
+    button,
+    .btn {
+        cursor: pointer !important;
+    }
+
+    input,
+    select,
+    textarea {
+        cursor: text !important;
+    }
+}
+
+/* Fallback: also hide on small screens */
 @media (max-width: 768px) {
     .cursor {
         display: none !important;

@@ -327,27 +327,142 @@
 
 @media (max-width: 768px) {
     .page-header {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
     }
 
     .page-header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .page-header p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .command-category {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
 
     .command-category h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .comparison-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 1.5rem 0;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .page-header::before,
+    .page-header::after {
+        display: none;
+    }
+
+    .commands-section {
+        padding: 1.5rem 0;
+    }
+
+    .command-category {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .command-category h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .category-icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .commands-list {
+        gap: 0.8rem;
+    }
+
+    .command-item {
+        padding: 0.8rem;
+        border-radius: 0.3rem;
+    }
+
+    .command-item code {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .command-item p {
+        font-size: 0.9rem;
+        margin: 0.3rem 0;
+    }
+
+    .example {
+        font-size: 0.85rem;
+        margin-top: 0.3rem;
+    }
+
+    .highlight {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .tips-section .tips-list {
+        padding-left: 0;
+    }
+
+    .tips-section li {
+        padding: 0.8rem;
+        margin-bottom: 0.6rem;
+        border-radius: 0.3rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .comparison-section {
+        padding: 1.5rem 0;
+    }
+
+    .comparison-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .comparison-card {
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .comparison-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .comparison-card p {
+        font-size: 0.9rem;
+    }
+
+    .info-box {
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 0.3rem;
+        font-size: 0.9rem;
     }
 }

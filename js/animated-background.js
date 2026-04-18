@@ -41,8 +41,16 @@ class FuturisticBackground {
     }
 
     createParticles() {
-        const particleCount = Math.min(120, Math.max(60, window.innerWidth / 10));
-        
+        // Optimize particle count for mobile devices
+        let particleCount;
+        if (window.innerWidth < 768) {
+            // Mobile: significant reduction
+            particleCount = Math.min(30, Math.max(15, window.innerWidth / 20));
+        } else {
+            // Desktop: standard count
+            particleCount = Math.min(120, Math.max(60, window.innerWidth / 10));
+        }
+
         for (let i = 0; i < particleCount; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
@@ -58,7 +66,8 @@ class FuturisticBackground {
     }
 
     createGridLines() {
-        const gridSize = 150;
+        // Adjust grid size for mobile devices
+        const gridSize = window.innerWidth < 768 ? 200 : 150;
         const cols = Math.ceil(this.canvas.width / gridSize) + 1;
         const rows = Math.ceil(this.canvas.height / gridSize) + 1;
 
@@ -92,10 +101,13 @@ class FuturisticBackground {
     }
 
     setupEventListeners() {
-        window.addEventListener('mousemove', (e) => {
-            this.mouseX = e.clientX;
-            this.mouseY = e.clientY;
-        });
+        // Only add mouse tracking on desktop devices
+        if (window.innerWidth >= 768) {
+            window.addEventListener('mousemove', (e) => {
+                this.mouseX = e.clientX;
+                this.mouseY = e.clientY;
+            });
+        }
 
         window.addEventListener('resize', () => {
             this.resizeCanvas();
