@@ -44,7 +44,7 @@ git push -u origin main
 
 ### Add a New Command:
 1. Edit `pages/features.html`
-2. Add the command item in the appropriate category
+2. Copy an `<article class="cmd">` block into the right category
 3. Commit and push to GitHub
 4. Changes will auto-deploy
 
@@ -54,24 +54,21 @@ git push -u origin main
 3. Commit and push
 
 ### Change Colors:
-1. Edit `css/styles.css`
-2. Modify the CSS variables in `:root`
-3. Commit and push
+1. Edit the CSS variables in `:root` at the top of `css/main.css`
+2. Commit and push
 
 ---
 
 ## File Structure for Reference:
 ```
-bot-website/
 ├── index.html
-├── css/styles.css
-├── css/pages.css
-├── js/script.js
-├── pages/
-│   ├── features.html
-│   ├── setup.html
-│   └── contact.html
-└── README.md
+├── css/main.css
+├── js/main.js
+├── image/
+└── pages/
+    ├── features.html
+    ├── setup.html
+    └── contact.html
 ```
 
 ---

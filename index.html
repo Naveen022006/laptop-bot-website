@@ -3,193 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop Control Bot - Discord Bot for Remote Control</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pages.css">
-    <link rel="stylesheet" href="css/cursor.css">
-    <script src="js/animated-background.js" defer></script>
-    <script src="js/cursor.js" defer></script>
-    <meta name="description" content="Control your laptop remotely via Discord. 25+ commands for system control, streaming, screenshots, and more.">
+    <title>Laptop Control Bot — Control your laptop from Discord</title>
+    <meta name="description" content="An open-source, self-hosted Discord bot that lets you control your laptop from anywhere: screenshots, webcam, volume, apps, music, live streaming and system stats.">
+    <meta name="theme-color" content="#0a0b10">
+    <meta property="og:title" content="Laptop Control Bot">
+    <meta property="og:description" content="Control your laptop from any Discord chat. Open source and self-hosted.">
+    <meta property="og:image" content="image/bot-character.png">
+    <link rel="icon" href="image/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="cursor-shape">
-            <path d="M50 10 L10 90 L90 90 Z" fill="#00D9FF" stroke="#00D9FF" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
-    </div>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <header class="nav">
         <div class="container">
-            <div class="nav-brand">
-                <img src="image/header-logo.png" alt="Laptop Control Bot" class="brand-logo">
-                <h1>Laptop Control Bot</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="pages/features.html">Features</a></li>
-                <li><a href="pages/setup.html">Setup</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Control Your Laptop From Discord</h1>
-                <p>Powerful Discord bot for remote laptop control with 25+ commands</p>
-                
-                <!-- Bot Status -->
-                <div class="status-card">
-                    <span class="status-label">Bot Status:</span>
-                    <span id="botStatus" class="status-indicator">Checking...</span>
-                </div>
-
-                <!-- CTA Buttons -->
-                <div class="cta-buttons">
-                    <a href="https://discord.com/oauth2/authorize?client_id=1476568677561401467&permissions=8&integration_type=0&scope=bot" target="_blank" class="btn btn-primary">
-                        🎮 Invite Bot to Discord
-                    </a>
-                    <a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" class="btn btn-secondary">
-                        📦 View on GitHub
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-image">
-                <img src="image/bot-character.png" alt="Bot Character" class="bot-icon">
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Overview -->
-    <section class="features-overview">
-        <div class="container">
-            <h2>Key Features</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🎤</span>
-                    <h3>Text to Speech</h3>
-                    <p>Make your laptop speak with voice commands</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">📸</span>
-                    <h3>Screenshot & Webcam</h3>
-                    <p>Capture display and webcam feeds instantly</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">📱</span>
-                    <h3>Mobile Streaming</h3>
-                    <p>Stream laptop screen to mobile devices in real-time</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🎵</span>
-                    <h3>Apple Music Control</h3>
-                    <p>Control music playback remotely</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🔧</span>
-                    <h3>System Control</h3>
-                    <p>Lock, shutdown, adjust volume, and more</p>
-                </div>
-                <div class="feature-card">
-                    <span class="feature-icon">💾</span>
-                    <h3>File Management</h3>
-                    <p>Download files directly from Discord</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Status -->
-    <section class="project-status">
-        <div class="container">
-            <h2>Project Status</h2>
-            <div class="status-grid">
-                <div class="status-box">
-                    <h3>📊 Status</h3>
-                    <p class="highlight">Active & Maintained</p>
-                </div>
-                <div class="status-box">
-                    <h3>🔧 Commands</h3>
-                    <p class="highlight">25+ Available</p>
-                </div>
-                <div class="status-box">
-                    <h3>⭐ Features</h3>
-                    <p class="highlight">Fully Functional</p>
-                </div>
-                <div class="status-box">
-                    <h3>📦 Version</h3>
-                    <p class="highlight">Latest on GitHub</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Start -->
-    <section class="quick-start">
-        <div class="container">
-            <h2>Quick Start</h2>
-            <ol class="steps">
-                <li>Click "Invite Bot to Discord" above</li>
-                <li>Give the bot appropriate permissions</li>
-                <li>Clone the repository or download the bot code</li>
-                <li>Follow the <a href="pages/setup.html">setup guide</a></li>
-                <li>Run the bot and start controlling your laptop!</li>
-            </ol>
-            <a href="pages/setup.html" class="btn btn-primary">📚 Detailed Setup Guide</a>
-        </div>
-    </section>
-
-    <!-- GitHub & Repository -->
-    <section class="github-section">
-        <div class="container">
-            <h2>Open Source</h2>
-            <p>Laptop Control Bot is open source and free to use</p>
-            <div class="github-links">
-                <a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" class="btn btn-github">
-                    ⭐ View on GitHub
+            <a href="index.html" class="brand" aria-label="Laptop Control Bot home">
+                <img src="image/logo.svg" alt="" class="brand-mark" width="32" height="32">
+                <span>Laptop Control Bot</span>
+            </a>
+            <nav aria-label="Main">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="pages/features.html">Commands</a></li>
+                    <li><a href="pages/setup.html">Setup</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                    <li class="mobile-only"><a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" rel="noopener">GitHub ↗</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
                 </a>
-                <a href="https://github.com/Naveen022006/laptop-control-application/releases" target="_blank" class="btn btn-github">
-                    📥 Download Releases
-                </a>
+                <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu"><span></span></button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Laptop Control Bot</h4>
-                    <p>Remote control your laptop via Discord</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="pages/features.html">Features</a></li>
-                        <li><a href="pages/setup.html">Setup Guide</a></li>
-                        <li><a href="pages/contact.html">Contact</a></li>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-copy">
+                    <span class="eyebrow"><span class="dot"></span>Open source · Self-hosted Discord bot</span>
+                    <h1>Your laptop, <span class="grad-text">one Discord message</span> away.</h1>
+                    <p class="hero-lede">
+                        Laptop Control Bot runs quietly on your computer and listens to you on Discord.
+                        Grab a screenshot, check the webcam, lock the screen, change the volume or play a song — from your phone, anywhere.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="pages/setup.html" class="btn btn-primary">
+                            Set it up
+                            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                        <a href="pages/features.html" class="btn btn-ghost">Browse commands</a>
+                    </div>
+                    <ul class="hero-meta">
+                        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free &amp; open source</li>
+                        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Runs on your machine</li>
+                        <li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Whitelisted users only</li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Developer</h4>
+
+                <div class="discord" data-demo data-avatar="image/bot-avatar.webp" aria-label="Example Discord conversation with the bot" role="img">
+                    <div class="discord-bar">
+                        <span class="hash">#</span> laptop
+                        <span class="topic">Laptop Bot online</span>
+                    </div>
+                    <div class="discord-feed" aria-hidden="true">
+                        <div class="msg">
+                            <div class="msg-avatar user">N</div>
+                            <div>
+                                <div class="msg-head"><span class="msg-name">naveen</span><span class="msg-time">Today at 9:41 AM</span></div>
+                                <div class="msg-body"><span class="msg-cmd">!sysinfo</span></div>
+                            </div>
+                        </div>
+                        <div class="msg">
+                            <img class="msg-avatar" src="image/bot-avatar.webp" alt="" width="40" height="40">
+                            <div>
+                                <div class="msg-head"><span class="msg-name bot">Laptop Bot</span><span class="msg-tag">APP</span><span class="msg-time">Today at 9:41 AM</span></div>
+                                <div class="msg-body">
+                                    <div class="embed">
+                                        <div class="embed-title">💻 System status</div>
+                                        <div class="embed-grid">
+                                            <div class="embed-field"><b>CPU</b><span>18%</span><div class="meter"><i style="width:18%"></i></div></div>
+                                            <div class="embed-field"><b>RAM</b><span>54%</span><div class="meter"><i style="width:54%"></i></div></div>
+                                            <div class="embed-field"><b>Disk</b><span>57%</span><div class="meter"><i style="width:57%"></i></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="typing" hidden aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><b>Laptop Bot</b> is typing…</div>
+                    <div class="discord-input" aria-hidden="true"><span class="discord-input-text">Message #laptop</span><span class="caret"></span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section-tight" id="how">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">How it works</span>
+                    <h2 class="section-title">Discord is the remote. Your laptop does the work.</h2>
+                    <p class="section-sub">A small Python program on your laptop signs in as your own Discord bot. When you type a command, it runs it locally and replies with the result.</p>
+                </div>
+                <div class="flow reveal">
+                    <div class="flow-node">
+                        <div class="icon-tile pink"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></div>
+                        <h3>You type a command</h3>
+                        <p>From Discord on your phone, tablet or any other computer — e.g. <code>!screenshot</code>.</p>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                    <div class="flow-node">
+                        <div class="icon-tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                        <h3>Discord delivers it</h3>
+                        <p>The bot keeps an outbound connection to Discord, so there’s no port forwarding or public IP needed.</p>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+                    <div class="flow-node">
+                        <div class="icon-tile mint"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg></div>
+                        <h3>Your laptop responds</h3>
+                        <p>The bot checks you’re on the allow-list, runs the action and posts the result back in the channel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">What it can do</span>
+                    <h2 class="section-title">Eight modules. One chat window.</h2>
+                    <p class="section-sub">Each module is a small Python file in the bot, so it’s easy to read, tweak or extend.</p>
+                </div>
+                <div class="cap-grid reveal">
+                    <a class="cap" href="pages/features.html#screenshots">
+                        <div class="icon-tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
+                        <h3>Screenshots</h3>
+                        <p>See exactly what’s on your screen right now.</p>
+                        <ul class="cap-cmds"><li><code>!screenshot</code></li></ul>
+                    </a>
+                    <a class="cap" href="pages/features.html#webcam">
+                        <div class="icon-tile pink"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                        <h3>Webcam</h3>
+                        <p>Snap a photo from the built-in camera.</p>
+                        <ul class="cap-cmds"><li><code>!webcam</code></li></ul>
+                    </a>
+                    <a class="cap" href="pages/features.html#streaming">
+                        <div class="icon-tile mint"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><path d="M2 12a9 9 0 0 1 8 8"/><path d="M2 16a5 5 0 0 1 4 4"/><line x1="2" x2="2.01" y1="20" y2="20"/></svg></div>
+                        <h3>Live streaming</h3>
+                        <p>Watch your screen live in Discord or in a phone browser on your Wi-Fi.</p>
+                        <ul class="cap-cmds"><li><code>!stream_start</code></li><li><code>!stream_web_start</code></li></ul>
+                    </a>
+                    <a class="cap" href="pages/features.html#system">
+                        <div class="icon-tile amber"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="2" x2="6" y1="14" y2="14"/><line x1="10" x2="14" y1="8" y2="8"/><line x1="18" x2="22" y1="16" y2="16"/></svg></div>
+                        <h3>System control</h3>
+                        <p>Open apps, search Chrome, set volume, lock or shut down.</p>
+                        <ul class="cap-cmds"><li><code>!lock</code></li><li><code>!vol_set</code></li><li><code>!open</code></li></ul>
+                    </a>
+                    <a class="cap" href="pages/features.html#music">
+                        <div class="icon-tile pink"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+                        <h3>Apple Music</h3>
+                        <p>Search and play songs, pause, skip and go back.</p>
+                        <ul class="cap-cmds"><li><code>!play</code></li><li><code>!next_song</code></li></ul>
+                    </a>
+                    <a class="cap" href="pages/features.html#audio">
+                        <div class="icon-tile"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+                        <h3>Text to speech</h3>
+                        <p>Make your laptop say anything out loud.</p>
+                        <ul class="cap-cmds"><li><code>!speak</code></li></ul>
+                    </a>
+                    <a class="cap" href="pages/features.html#files">
+                        <div class="icon-tile mint"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="M12 10v6"/><path d="m15 13-3 3-3-3"/></svg></div>
+                        <h3>File download</h3>
+                        <p>Pull any file up to 25&nbsp;MB straight into Discord.</p>
+                        <ul class="cap-cmds"><li><code>!download</code></li></ul>
+                    </a>
+                    <a class="cap" href="pages/features.html#sysinfo">
+                        <div class="icon-tile amber"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></div>
+                        <h3>System info</h3>
+                        <p>OS, CPU, memory and disk usage at a glance.</p>
+                        <ul class="cap-cmds"><li><code>!sysinfo</code></li></ul>
+                    </a>
+                </div>
+                <p class="reveal" style="margin-top: 28px;"><a href="pages/features.html" class="arrow-link">See the full command reference</a></p>
+            </div>
+        </section>
+
+        <!-- Security -->
+        <section class="section-tight" id="security">
+            <div class="container split">
+                <div class="reveal">
+                    <span class="section-kicker">Private by design</span>
+                    <h2 class="section-title">Your bot. Your token. Your rules.</h2>
+                    <p class="section-sub">There’s no shared server and no account to sign up for. You create your own Discord bot and run it on your own machine.</p>
+                    <ul class="check-list">
+                        <li>
+                            <span class="tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <div><strong>Allow-listed users only</strong><span>Commands from anyone not listed in <code>AUTHORIZED_USERS</code> are ignored.</span></div>
+                        </li>
+                        <li>
+                            <span class="tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <div><strong>Secrets stay local</strong><span>Your bot token lives in a <code>.env</code> file on your laptop and is never sent anywhere except Discord.</span></div>
+                        </li>
+                        <li>
+                            <span class="tick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+                            <div><strong>Read every line</strong><span>The full source is on GitHub, so you can audit exactly what each command does.</span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="terminal reveal">
+                    <div class="terminal-bar">
+                        <span class="lights"><i></i><i></i><i></i></span>
+                        <span class="title">.env</span>
+                    </div>
+<pre><code><span class="c"># Keep this file private — never commit it</span>
+<span class="k">DISCORD_TOKEN</span>=<span class="s">your_bot_token_here</span>
+<span class="k">AUTHORIZED_USERS</span>=<span class="s">123456789012345678</span>
+
+<span class="c"># Several people? Separate IDs with commas</span>
+<span class="c"># AUTHORIZED_USERS=1234…,5678…</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick start -->
+        <section class="section" id="quick-start">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">Quick start</span>
+                    <h2 class="section-title">Up and running in about ten minutes.</h2>
+                    <p class="section-sub">All you need is Python 3.8+, Git and a Discord account.</p>
+                </div>
+                <ol class="steps-row reveal">
+                    <li>
+                        <h3>Create a Discord bot</h3>
+                        <p>Make an application in the Discord Developer Portal and copy its token.</p>
+                    </li>
+                    <li>
+                        <h3>Clone &amp; install</h3>
+                        <p>Download the code and install the Python requirements.</p>
+                    </li>
+                    <li>
+                        <h3>Add your <code>.env</code></h3>
+                        <p>Paste your token and your own Discord user ID.</p>
+                    </li>
+                    <li>
+                        <h3>Run it</h3>
+                        <p>Start <code>bot.py</code> and send <code>!screenshot</code> to test.</p>
+                    </li>
+                </ol>
+                <div class="terminal reveal" style="margin-top: 16px;">
+                    <div class="terminal-bar">
+                        <span class="lights"><i></i><i></i><i></i></span>
+                        <span class="title">terminal</span>
+                        <button class="copy-btn" type="button" data-copy="">
+                            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span class="copy-label">Copy</span>
+                        </button>
+                    </div>
+<pre><code><span class="p">$ </span><span data-line>git clone https://github.com/Naveen022006/laptop-control-application.git</span>
+<span class="p">$ </span><span data-line>cd laptop-control-application</span>
+<span class="p">$ </span><span data-line>pip install -r requirements.txt</span>
+<span class="p">$ </span><span data-line>python bot.py</span>
+<span class="o">Logged in as Laptop Bot — ready to receive commands.</span></code></pre>
+                </div>
+                <p class="reveal" style="margin-top: 28px;"><a href="pages/setup.html" class="arrow-link">Read the step-by-step guide</a></p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section-tight">
+            <div class="container">
+                <div class="cta-band reveal">
+                    <h2>Take your laptop with you — without carrying it.</h2>
+                    <p>Free, open source and yours to customise. Star the repo, grab a release, or jump straight into setup.</p>
+                    <div class="hero-ctas">
+                        <a href="pages/setup.html" class="btn btn-primary">Get started</a>
+                        <a href="https://github.com/Naveen022006/laptop-control-application/releases" target="_blank" rel="noopener" class="btn btn-ghost">
+                            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                            Download a release
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand">
+                        <img src="image/logo.svg" alt="" class="brand-mark" width="32" height="32">
+                        <span>Laptop Control Bot</span>
+                    </a>
+                    <p>An open-source Discord bot for controlling your own laptop remotely.</p>
+                </div>
+                <div>
+                    <h3>Product</h3>
                     <ul>
-                        <li><a href="https://github.com/Naveen022006" target="_blank">GitHub Profile</a></li>
-                        <li><a href="https://naveenhub.dev" target="_blank">Portfolio</a></li>
-                        <li><a href="mailto:kanagunaveen@gmail.com">Email</a></li>
+                        <li><a href="pages/features.html">Commands</a></li>
+                        <li><a href="pages/setup.html">Setup guide</a></li>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application/releases" target="_blank" rel="noopener">Releases</a></li>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=1476568677561401467&amp;permissions=8&amp;integration_type=0&amp;scope=bot" target="_blank" rel="noopener">Invite bot</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Project</h3>
+                    <ul>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" rel="noopener">Source code</a></li>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application/issues" target="_blank" rel="noopener">Report an issue</a></li>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application/blob/main/LICENSE" target="_blank" rel="noopener">License</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Developer</h3>
+                    <ul>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                        <li><a href="https://github.com/Naveen022006" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://naveenhub.dev" target="_blank" rel="noopener">Portfolio</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024-2026 Laptop Control Bot. All rights reserved. | <a href="https://github.com/Naveen022006/laptop-control-application/blob/main/LICENSE">License</a></p>
+                <span>&copy; 2024–2026 Laptop Control Bot · Built by Naveen K</span>
+                <a href="#main">Back to top ↑</a>
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>

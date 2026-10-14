@@ -3,291 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features & Commands - Laptop Control Bot</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="../css/cursor.css">
-    <script src="../js/animated-background.js" defer></script>
-    <script src="../js/cursor.js" defer></script>
+    <title>Commands — Laptop Control Bot</title>
+    <meta name="description" content="Full command reference for Laptop Control Bot: screenshots, webcam, live streaming, volume, apps, Apple Music, text to speech, file download and system info.">
+    <meta name="theme-color" content="#0a0b10">
+    <link rel="icon" href="../image/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="cursor-shape">
-            <path d="M50 10 L10 90 L90 90 Z" fill="#00D9FF" stroke="#00D9FF" stroke-width="0.8" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
-    </div>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <header class="nav">
         <div class="container">
-            <div class="nav-brand">
-                <img src="../image/header-logo.png" alt="Laptop Control Bot" class="brand-logo">
-                <h1>Laptop Control Bot</h1>
+            <a href="../index.html" class="brand" aria-label="Laptop Control Bot home">
+                <img src="../image/logo.svg" alt="" class="brand-mark" width="32" height="32">
+                <span>Laptop Control Bot</span>
+            </a>
+            <nav aria-label="Main">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="features.html" aria-current="page">Commands</a></li>
+                    <li><a href="setup.html">Setup</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="mobile-only"><a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" rel="noopener">GitHub ↗</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+                    <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+                <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu"><span></span></button>
             </div>
-            <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="setup.html">Setup</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
         </div>
-    </nav>
+    </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>🎮 Features & Commands</h1>
-            <p>Complete list of 25+ commands to control your laptop remotely</p>
-        </div>
-    </section>
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow"><span class="dot"></span><span><span data-command-total>23</span> commands · 8 modules</span></span>
+                <h1>Command reference</h1>
+                <p>Every command the bot understands. Type them in any channel the bot can read. Arguments in <code>&lt;angle brackets&gt;</code> are required, ones in <code>[square brackets]</code> are optional.</p>
+            </div>
+        </section>
 
-    <!-- Commands by Category -->
-    <section id="features" class="commands-section">
-        <div class="container">
-            <!-- Audio Commands -->
-            <div class="command-category">
-                <div class="category-icon">🎤</div>
-                <h2>Audio & Voice (audio.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!speak &lt;message&gt;</code>
-                        <p>Make the laptop speak a message aloud using Native TTS</p>
-                        <span class="example">Example: <code>!speak "Hello there!"</code></span>
+        <section class="commands">
+            <div class="container">
+                <div class="cmd-toolbar">
+                    <label class="search">
+                        <span class="sr-only">Search commands</span>
+                        <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input id="cmd-search" type="search" placeholder="Search commands…  ( / )" autocomplete="off">
+                    </label>
+                    <div class="chips" role="group" aria-label="Filter by category">
+                    <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="chip" type="button" data-filter="audio" aria-pressed="false">Audio &amp; voice</button>
+                    <button class="chip" type="button" data-filter="system" aria-pressed="false">System control</button>
+                    <button class="chip" type="button" data-filter="files" aria-pressed="false">File management</button>
+                    <button class="chip" type="button" data-filter="music" aria-pressed="false">Apple Music</button>
+                    <button class="chip" type="button" data-filter="screenshots" aria-pressed="false">Screenshots</button>
+                    <button class="chip" type="button" data-filter="streaming" aria-pressed="false">Live streaming</button>
+                    <button class="chip" type="button" data-filter="sysinfo" aria-pressed="false">System information</button>
+                    <button class="chip" type="button" data-filter="webcam" aria-pressed="false">Webcam</button>
                     </div>
+                    <span id="cmd-count" class="sr-only" aria-live="polite"></span>
+                </div>
+
+                <section class="cmd-group" id="audio" data-category="audio" aria-labelledby="audio-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile "><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+                        <h2 id="audio-title">Audio &amp; voice</h2>
+                        <span class="module">audio.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!speak <span class="arg">&lt;message&gt;</span></code>
+                                <button class="copy-btn" type="button" data-copy="!speak &quot;Hello there!&quot;" aria-label="Copy !speak"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Make the laptop speak a message out loud using the system’s native text-to-speech.</p>
+                            <div class="cmd-example">Example: <code>!speak &quot;Hello there!&quot;</code></div>
+                        </article>
+                    </div>
+                </section>
+                <section class="cmd-group" id="system" data-category="system" aria-labelledby="system-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile amber"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="2" x2="6" y1="14" y2="14"/><line x1="10" x2="14" y1="8" y2="8"/><line x1="18" x2="22" y1="16" y2="16"/></svg></div>
+                        <h2 id="system-title">System control</h2>
+                        <span class="module">control.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!open_chrome</code>
+                                <button class="copy-btn" type="button" data-copy="!open_chrome" aria-label="Copy !open_chrome"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Open Google Chrome on the laptop.</p>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!chrome_search <span class="arg">&lt;search terms&gt;</span></code>
+                                <button class="copy-btn" type="button" data-copy="!chrome_search weather in chennai" aria-label="Copy !chrome_search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Open Chrome and search Google directly.</p>
+                            <div class="cmd-example">Example: <code>!chrome_search weather in chennai</code></div>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!open <span class="arg">&lt;app_name&gt;</span></code>
+                                <button class="copy-btn" type="button" data-copy="!open notepad" aria-label="Copy !open"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Try to open an application by name.</p>
+                            <div class="cmd-example">Example: <code>!open notepad</code></div>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!lock</code>
+                                <button class="copy-btn" type="button" data-copy="!lock" aria-label="Copy !lock"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Lock the computer workstation.</p>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!shutdown</code>
+                                <button class="copy-btn" type="button" data-copy="!shutdown" aria-label="Copy !shutdown"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Start a system shutdown (10 second delay by default).</p>
+                            <span class="badge amber">Use with care</span>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!vol_up <span class="opt">[amount]</span></code>
+                                <button class="copy-btn" type="button" data-copy="!vol_up 5" aria-label="Copy !vol_up"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Raise the system volume by 1–50 (default 10).</p>
+                            <div class="cmd-example">Example: <code>!vol_up 5</code></div>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!vol_down <span class="opt">[amount]</span></code>
+                                <button class="copy-btn" type="button" data-copy="!vol_down 15" aria-label="Copy !vol_down"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Lower the system volume by 1–50 (default 10).</p>
+                            <div class="cmd-example">Example: <code>!vol_down 15</code></div>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!vol_set <span class="arg">&lt;level&gt;</span></code>
+                                <button class="copy-btn" type="button" data-copy="!vol_set 50" aria-label="Copy !vol_set"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Set the master volume to an exact percentage (0–100).</p>
+                            <div class="cmd-example">Example: <code>!vol_set 50</code></div>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!mute</code>
+                                <button class="copy-btn" type="button" data-copy="!mute" aria-label="Copy !mute"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Toggle system audio mute on or off.</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="cmd-group" id="files" data-category="files" aria-labelledby="files-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile mint"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="M12 10v6"/><path d="m15 13-3 3-3-3"/></svg></div>
+                        <h2 id="files-title">File management</h2>
+                        <span class="module">files.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!download <span class="arg">&lt;path&gt;</span></code>
+                                <button class="copy-btn" type="button" data-copy="!download C:\Users\YourName\Documents\file.txt" aria-label="Copy !download"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Send a file from the laptop to Discord (25 MB limit).</p>
+                            <div class="cmd-example">Example: <code>!download C:\Users\YourName\Documents\file.txt</code></div>
+                        </article>
+                    </div>
+                </section>
+                <section class="cmd-group" id="music" data-category="music" aria-labelledby="music-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile pink"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+                        <h2 id="music-title">Apple Music</h2>
+                        <span class="module">music.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!play <span class="arg">&lt;song name&gt;</span></code>
+                                <button class="copy-btn" type="button" data-copy="!play Blinding Lights" aria-label="Copy !play"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Open Apple Music, search for the song and play it.</p>
+                            <div class="cmd-example">Example: <code>!play Blinding Lights</code></div>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!pause_music</code>
+                                <button class="copy-btn" type="button" data-copy="!pause_music" aria-label="Copy !pause_music"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Pause or resume the current song.</p>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!stop_music</code>
+                                <button class="copy-btn" type="button" data-copy="!stop_music" aria-label="Copy !stop_music"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Stop the current song and rewind to the start.</p>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!next_song</code>
+                                <button class="copy-btn" type="button" data-copy="!next_song" aria-label="Copy !next_song"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Skip to the next track.</p>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!prev_song</code>
+                                <button class="copy-btn" type="button" data-copy="!prev_song" aria-label="Copy !prev_song"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Go back to the previous track.</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="cmd-group" id="screenshots" data-category="screenshots" aria-labelledby="screenshots-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile "><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
+                        <h2 id="screenshots-title">Screenshots</h2>
+                        <span class="module">screenshot.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!screenshot</code>
+                                <button class="copy-btn" type="button" data-copy="!screenshot" aria-label="Copy !screenshot"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Capture the primary display and upload it to Discord.</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="cmd-group" id="streaming" data-category="streaming" aria-labelledby="streaming-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile mint"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><path d="M2 12a9 9 0 0 1 8 8"/><path d="M2 16a5 5 0 0 1 4 4"/><line x1="2" x2="2.01" y1="20" y2="20"/></svg></div>
+                        <h2 id="streaming-title">Live streaming</h2>
+                        <span class="module">stream.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!stream_start</code>
+                                <button class="copy-btn" type="button" data-copy="!stream_start" aria-label="Copy !stream_start"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Start a live view that updates one Discord message with a fresh screenshot every second.</p>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!stream_stop</code>
+                                <button class="copy-btn" type="button" data-copy="!stream_stop" aria-label="Copy !stream_stop"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Stop the Discord live view.</p>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!stream_web_start</code>
+                                <button class="copy-btn" type="button" data-copy="!stream_web_start" aria-label="Copy !stream_web_start"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Start a web stream server you can open in any phone or tablet browser on the same network.</p>
+                            <span class="badge ">Mobile-friendly</span>
+                        </article>
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!stream_web_stop</code>
+                                <button class="copy-btn" type="button" data-copy="!stream_web_stop" aria-label="Copy !stream_web_stop"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Stop the web stream server.</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="cmd-group" id="sysinfo" data-category="sysinfo" aria-labelledby="sysinfo-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile amber"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg></div>
+                        <h2 id="sysinfo-title">System information</h2>
+                        <span class="module">systeminfo.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!sysinfo</code>
+                                <button class="copy-btn" type="button" data-copy="!sysinfo" aria-label="Copy !sysinfo"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Show OS details plus CPU, memory and disk usage.</p>
+                        </article>
+                    </div>
+                </section>
+                <section class="cmd-group" id="webcam" data-category="webcam" aria-labelledby="webcam-title">
+                    <div class="cmd-group-head">
+                        <div class="icon-tile pink"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></div>
+                        <h2 id="webcam-title">Webcam</h2>
+                        <span class="module">webcam.py</span>
+                    </div>
+                    <div class="cmd-list">
+                        <article class="cmd">
+                            <div class="cmd-top">
+                                <code class="cmd-sig">!webcam</code>
+                                <button class="copy-btn" type="button" data-copy="!webcam" aria-label="Copy !webcam"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span class="copy-label">Copy</span></button>
+                            </div>
+                            <p>Take a photo with the default webcam and upload it to Discord.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <div id="cmd-empty" class="empty-state" hidden>
+                    No commands match that search. Try something like “volume” or “stream”.
                 </div>
             </div>
+        </section>
 
-            <!-- System Control Commands -->
-            <div class="command-category">
-                <div class="category-icon">🔧</div>
-                <h2>System Control (control.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!open_chrome</code>
-                        <p>Open Google Chrome on the laptop</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!chrome_search &lt;search terms&gt;</code>
-                        <p>Open Chrome and search Google directly</p>
-                        <span class="example">Example: <code>!chrome_search weather in chennai</code></span>
-                    </div>
-                    <div class="command-item">
-                        <code>!open &lt;app_name&gt;</code>
-                        <p>Attempt to open an application by name</p>
-                        <span class="example">Example: <code>!open notepad</code>, <code>!open calc</code></span>
-                    </div>
-                    <div class="command-item">
-                        <code>!lock</code>
-                        <p>Lock the computer workstation</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!shutdown</code>
-                        <p>Initiate a system shutdown (defaults to 10s delay)</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!vol_up [amount]</code>
-                        <p>Increase system volume by specified amount (1-50, default 10)</p>
-                        <span class="example">Example: <code>!vol_up 5</code></span>
-                    </div>
-                    <div class="command-item">
-                        <code>!vol_down [amount]</code>
-                        <p>Decrease system volume by specified amount (1-50, default 10)</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!mute</code>
-                        <p>Toggle system audio mute/unmute</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!vol_set &lt;level&gt;</code>
-                        <p>Set system master volume to an exact percentage (0-100)</p>
-                        <span class="example">Example: <code>!vol_set 50</code></span>
-                    </div>
+        <section class="section-tight">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-kicker">Good to know</span>
+                    <h2 class="section-title">Tips &amp; limits</h2>
                 </div>
-            </div>
-
-            <!-- File Management Commands -->
-            <div class="command-category">
-                <div class="category-icon">💾</div>
-                <h2>File Management (files.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!download &lt;path&gt;</code>
-                        <p>Download a specific file from the laptop to Discord (25 MB limit)</p>
-                        <span class="example">Example: <code>!download C:\Users\YourName\Documents\file.txt</code></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Apple Music Commands -->
-            <div class="command-category">
-                <div class="category-icon">🎵</div>
-                <h2>Apple Music Control (music.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!play &lt;song name&gt;</code>
-                        <p>Remotely open Apple Music, search, and play the specified song</p>
-                        <span class="example">Example: <code>!play Blinding Lights</code></span>
-                    </div>
-                    <div class="command-item">
-                        <code>!pause_music</code>
-                        <p>Pause or resume the current song in Apple Music</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!stop_music</code>
-                        <p>Stop the current song and rewind to the beginning</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!next_song</code>
-                        <p>Skip to the next track</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!prev_song</code>
-                        <p>Go back to the previous track</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Screenshot Commands -->
-            <div class="command-category">
-                <div class="category-icon">📸</div>
-                <h2>Screenshots (screenshot.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!screenshot</code>
-                        <p>Take a screenshot of the primary laptop display and upload it to Discord</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Streaming Commands -->
-            <div class="command-category">
-                <div class="category-icon">📱</div>
-                <h2>Live Streaming (stream.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!stream_start</code>
-                        <p>Start a live stream that updates a single Discord message with screenshots every second</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!stream_web_start</code>
-                        <p>Start a web-based live stream server for mobile device access</p>
-                        <span class="highlight">📱 Mobile-friendly: Opens URL viewable on any phone/tablet on the same network</span>
-                    </div>
-                    <div class="command-item">
-                        <code>!stream_web_stop</code>
-                        <p>Stop the web streaming server</p>
-                    </div>
-                    <div class="command-item">
-                        <code>!stream_stop</code>
-                        <p>Stop the Discord-based stream</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- System Information Commands -->
-            <div class="command-category">
-                <div class="category-icon">💻</div>
-                <h2>System Information (systeminfo.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!sysinfo</code>
-                        <p>Display core hardware utilization including OS details, CPU usage, Memory/RAM stats, and Disk storage</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Webcam Commands -->
-            <div class="command-category">
-                <div class="category-icon">📷</div>
-                <h2>Webcam (webcam.py)</h2>
-                <div class="commands-list">
-                    <div class="command-item">
-                        <code>!webcam</code>
-                        <p>Capture a snapshot using the laptop's default webcam and upload it to Discord</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tips & Tricks -->
-            <div class="command-category tips-section">
-                <div class="category-icon">💡</div>
-                <h2>Tips & Tricks</h2>
-                <ul class="tips-list">
-                    <li>✅ All commands require you to be an <strong>authorized user</strong> (configured in .env)</li>
-                    <li>✅ Commands are <strong>case-insensitive</strong> (use any case you want)</li>
-                    <li>✅ Use <strong>quotes for messages</strong> with spaces: <code>!speak "Hello World"</code></li>
-                    <li>✅ The bot requires <strong>administrator permissions</strong> in your Discord server</li>
-                    <li>✅ All interactions are <strong>real-time</strong> when properly configured</li>
-                    <li>✅ <strong>Mobile streaming</strong> works on the same WiFi network</li>
-                    <li>✅ File downloads are limited to <strong>25 MB</strong> due to Discord API limits</li>
+                <ul class="tips reveal">
+                    <li><strong>Authorized users only</strong>Only Discord IDs listed in <code>AUTHORIZED_USERS</code> can run commands.</li>
+                    <li><strong>Quote longer text</strong>Wrap messages with spaces in quotes: <code>!speak "Hello world"</code>.</li>
+                    <li><strong>File size limit</strong><code>!download</code> sends files up to 25&nbsp;MB — servers without boosts may allow less.</li>
+                    <li><strong>Same Wi-Fi for web stream</strong><code>!stream_web_start</code> is reachable from devices on your local network.</li>
+                    <li><strong>Some apps required</strong>Chrome and Apple Music commands need those apps installed on the laptop.</li>
+                    <li><strong>Permissions</strong>The bot needs permission to read and send messages and attach files in your channel.</li>
                 </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Feature Comparison -->
-    <section class="comparison-section">
-        <div class="container">
-            <h2>Feature Overview</h2>
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h3>✨ Real-Time Control</h3>
-                    <p>Execute commands instantly on your laptop from anywhere</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>🔐 Secure & Authorized</h3>
-                    <p>Only whitelisted Discord users can execute commands</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>📱 Mobile Friendly</h3>
-                    <p>Stream your desktop to any mobile device on the network</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>🎛️ Full System Control</h3>
-                    <p>Control volume, launch apps, lock/shutdown, and more</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>🎵 Media Control</h3>
-                    <p>Play music, pause, skip, and control playback remotely</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>📊 Live Monitoring</h3>
-                    <p>Check system stats and take screenshots instantly</p>
+        <section class="section-tight">
+            <div class="container">
+                <div class="cta-band reveal">
+                    <h2>Ready to try them?</h2>
+                    <p>Set up your own bot in a few minutes, then send <code>!screenshot</code> from your phone.</p>
+                    <div class="hero-ctas">
+                        <a href="setup.html" class="btn btn-primary">Open the setup guide</a>
+                        <a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" rel="noopener" class="btn btn-ghost">View the source</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Laptop Control Bot</h4>
-                    <p>Remote control your laptop via Discord</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand">
+                        <img src="../image/logo.svg" alt="" class="brand-mark" width="32" height="32">
+                        <span>Laptop Control Bot</span>
+                    </a>
+                    <p>An open-source Discord bot for controlling your own laptop remotely.</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
+                <div>
+                    <h3>Product</h3>
                     <ul>
-                        <li><a href="#features">All Commands</a></li>
-                        <li><a href="setup.html">Setup Guide</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="features.html">Commands</a></li>
+                        <li><a href="setup.html">Setup guide</a></li>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application/releases" target="_blank" rel="noopener">Releases</a></li>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=1476568677561401467&amp;permissions=8&amp;integration_type=0&amp;scope=bot" target="_blank" rel="noopener">Invite bot</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Developer</h4>
+                <div>
+                    <h3>Project</h3>
                     <ul>
-                        <li><a href="https://github.com/Naveen022006" target="_blank">GitHub</a></li>
-                        <li><a href="https://naveenhub.dev" target="_blank">Portfolio</a></li>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application" target="_blank" rel="noopener">Source code</a></li>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application/issues" target="_blank" rel="noopener">Report an issue</a></li>
+                        <li><a href="https://github.com/Naveen022006/laptop-control-application/blob/main/LICENSE" target="_blank" rel="noopener">License</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Developer</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="https://github.com/Naveen022006" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://naveenhub.dev" target="_blank" rel="noopener">Portfolio</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024-2026 Laptop Control Bot. All rights reserved.</p>
+                <span>&copy; 2024–2026 Laptop Control Bot · Built by Naveen K</span>
+                <a href="#main">Back to top ↑</a>
             </div>
         </div>
     </footer>
-
-    <script src="../js/script.js"></script>
 </body>
 </html>
